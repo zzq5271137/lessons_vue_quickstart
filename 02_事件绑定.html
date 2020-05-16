@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_事件绑定</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>{{name}}</h1>
+
+    <input type="text" v-model="name">
+
+    <!-- 事件绑定 -->
+    <button v-on:click="myClick1()">一个按钮</button>
+    <button @click="myClick2()">另一个按钮</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            name: 'zzq',
+        },
+
+        // 事件处理
+        methods: {
+            myClick1: function () {
+                this.name = '更改了数据';
+            },
+            myClick2: function () {
+                this.name = 'zzq';
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

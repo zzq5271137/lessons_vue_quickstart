@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09_节点控制</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <!--
+        使用v-if控制节点的显示与隐藏, 它控制的是是否渲染该节点,
+        如果值为false则该节点根本就不会被渲染
+    -->
+    <div v-if="true">内容</div>
+
+    <!--
+        使用v-show控制节点的显示与隐藏, 它控制的是是否显示该节点(通过控制display样式),
+        如果值为false则该节点会被渲染, 但是是为style="display: none;"
+    -->
+    <div v-show="false">内容</div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+    });
+</script>
+
+</body>
+</html>

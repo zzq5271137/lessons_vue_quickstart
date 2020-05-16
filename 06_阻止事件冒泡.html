@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06_阻止事件冒泡</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+    <style>
+        #testdiv {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!--
+        事件冒泡:
+        子元素响应事件时, 父元素跟着一起响应事件;
+        例如, a标签和div标签都绑定了一个点击事件, 由于a标签在div标签内部,
+        所以当点击a标签时, a标签和div标签的点击事件都触发了, 这就是事件冒泡;
+    -->
+    <div id="testdiv" @click="onDivClick()">
+        <!-- 阻止事件冒泡 -->
+        <a href="http://www.baidu.com" @click="onAClick($event)">百度一下</a>
+
+        <hr>
+
+        <!-- 也可以使用.stop修饰符阻止事件冒泡 -->
+        <a href="http://www.baidu.com" @click.prevent.stop="onAClick2()">百度一下</a>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            onAClick: function (event) {
+                alert('点击了a标签');
+                event.preventDefault();  // 阻止默认事件
+                event.stopPropagation();  // 阻止事件冒泡
+            },
+            onAClick2: function () {
+                alert('点击了a标签');
+            },
+            onDivClick: function () {
+                alert('点击了div标签');
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

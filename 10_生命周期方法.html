@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10_生命周期方法</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <h1>{{ name }}</h1>
+    <button @click="changeData()">改变数据</button>
+    <br>
+    <button @click="destroy()">销毁Vue对象</button>
+</div>
+
+<script>
+    let vueObj = new Vue({
+        el: '#app',
+        data: {
+            name: 'zs',
+            age: 10
+        },
+        methods: {
+            // 自己定义的方法写在methods里面, 生命周期方法不写在methods里面
+            changeData: function () {
+                this.name = 'new zs';
+
+                // 如果只改变age, 是不会调用beforeUpdate和updated方法的,
+                // 因为age根本没有绑定到节点上, 它的改变不会造成页面的改变,
+                // 而beforeUpdate和updated方法是在页面发生改变时调用的
+                // this.age = 20;
+            },
+            destroy: function () {
+                vueObj.$destroy();  // 销毁Vue对象
+            }
+        },
+
+        /*
+         * 生命周期方法
+         */
+        beforeCreate: function () {
+            console.log('当Vue对象创建之前调用beforeCreate()方法');
+            // 此时, 什么都没有, 既没有加载节点, 也没有初始化好data
+            console.log('el: ');
+            console.log(this.$el);
+            console.log('data: ');
+            console.log(this.$data);
+            console.log('name: ');
+            console.log(this.name);
+            console.log('=================================');
+        },
+        created: function () {
+            console.log('当Vue对象创建之后调用created()方法');
+            console.log('el: ');
+            console.log(this.$el);  // 此时节点还没有加载
+            console.log('data: ');
+            console.log(this.$data);  // 这时data已经初始化好了, 所以一般网络请求都在created()方法里做
+            console.log('name: ');
+            console.log(this.name);
+            console.log('=================================');
+        },
+        beforeMount: function () {
+            console.log('当数据绑定到节点之前调用beforeMount()方法');
+            console.log('el: ');
+            console.log(this.$el);  // 此时节点已经加载了, 但是并没有解析data(没有将data渲染到节点上)
+            console.log('data: ');
+            console.log(this.$data);
+            console.log('name: ');
+            console.log(this.name);
+            console.log('=================================');
+        },
+        mounted: function () {
+            console.log('当数据绑定到节点之后调用mounted()方法');
+            console.log('el: ');
+            console.log(this.$el);  // 此时, data已经渲染到节点上了
+            console.log('data: ');
+            console.log(this.$data);
+            console.log('name: ');
+            console.log(this.name);
+            console.log('=================================');
+        },
+
+        // 这两个方法是"页面"发生改变时调用, 而不是"数据"发生改变时调用
+        beforeUpdate: function () {
+            console.log('当页面更新或发生改变之前调用beforeUpdate()方法');
+        },
+        updated: function () {
+            console.log('当页面更新或发生改变之后调用updated()方法');
+        },
+
+        beforeDestroy: function () {
+            console.log('当Vue对象销毁之前调用');
+        },
+        destroyed: function () {
+            console.log('当Vue对象销毁之后调用');
+        }
+    });
+</script>
+
+</body>
+</html>

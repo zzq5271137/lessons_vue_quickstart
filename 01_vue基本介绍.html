@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01_vue基本介绍</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<!--
+    Vue.js、Angular.js、React.js等前端框架的核心就是数据的双向绑定, 即MVVM模型;
+    MVVM是Model-View-ViewModel的简写, 它本质上就是MVC的改进版;
+    MVVM就是将其中的View的状态和行为抽象化, 让我们将视图UI和业务逻辑分开;
+    MVVM模式和MVC模式一样, 主要目的是分离视图(View)和模型(Model);
+    Vue.js是一个提供了MVVM风格的双向数据绑定的Javascript库, 专注于View层;
+    它的核心是MVVM 中的VM, 也就是ViewModel;
+    ViewModel负责连接View和Model, 保证视图和数据的一致性;
+ -->
+
+<!-- 需要在body中定义一个根节点, 一般是div -->
+<div id="app"> <!-- 只有在根节点中的内容才能被Vue解析 -->
+    <!-- {{}}: 取出绑定的值 -->
+    <h1>{{message}}</h1>
+    <hr>
+    <h1>{{name}}</h1>
+
+    <!--
+        v-model: 绑定view与model;
+        其中, view(视图)是input文本框, model(数据)是我们定义的message;
+        这是双向绑定, 即, 把input文本框的内容绑定到了message上,
+        message -> input: 把message的内容渲染到input文本框中;
+        input -> message: 当input文本框中的内容发生改变, message也发生改变;
+        (修改文本框中的内容, 观察上边的<h1>{{name}}</h1>)
+    -->
+    <input type="text" v-model="name">
+</div>
+
+<script>
+    new Vue({
+        // 初始化Vue对象的根节点
+        el: '#app',
+
+        // 定义页面模型数据
+        data: {
+            // 这些名字随便写
+            message: 'hello vue',
+            name: 'zzq',
+        }
+    });
+</script>
+
+</body>
+</html>

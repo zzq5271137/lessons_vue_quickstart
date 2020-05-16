@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04_绑定鼠标事件</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        #testdiv {
+            width: 200px;
+            height: 200px;
+            margin-left: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!-- 鼠标事件绑定 -->
+    <div id="testdiv" @mousemove="onMousemove($event)">
+        x = {{x}}, y = {{y}}
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            x: 0,
+            y: 0,
+        },
+
+        // 事件处理
+        methods: {
+            onMousemove: function (event) {
+                this.x = event.x;
+                this.y = event.y;
+            },
+        }
+    });
+</script>
+
+</body>
+</html>

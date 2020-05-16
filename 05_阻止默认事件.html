@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05_阻止默认事件</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <!--
+        默认事件:
+        标签默认的事件, 比如点击a标签会跳转到href指定的地址;
+        当你绑定了一个点击事件, 你的点击事件处理完之后, 默认的事件还是会处理;
+        可以使用event.preventDefault()来阻止默认事件;
+    -->
+    <a href="http://www.baidu.com" @click="onClick($event)">百度一下</a>
+
+    <hr>
+
+    <!-- 或者可以使用.prevent修饰符来阻止默认事件 -->
+    <a href="http://www.baidu.com" @click.prevent="onClick2()">百度一下</a>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        methods: {
+            onClick: function (event) {
+                alert('点击了a标签');
+                event.preventDefault();  // 阻止默认事件
+            },
+            onClick2: function () {
+                alert('点击了a标签');
+            },
+        }
+    });
+</script>
+
+</body>
+</html>

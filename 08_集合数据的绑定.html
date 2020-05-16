@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08_集合数据的绑定</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <!--
+        使用v-for进行集合数据的绑定
+    -->
+    <p v-for="item in strList">{{ item }}</p>  <!-- 遍历数组 -->
+    <hr>
+    <p v-for="(item, index) in strList">{{ index }}---{{ item }}</p>  <!-- 遍历数组(带下标) -->
+    <hr>
+    <p v-for="item in objList">{{ item.id }}---{{ item.name }}</p>  <!-- 遍历对象数组 -->
+    <hr>
+    <p v-for="(value, key) in obj">{{ key }}---{{ value }}</p>  <!-- 遍历对象 -->
+    <hr>
+    <p v-for="count in 4">{{ count }}</p>  <!-- 遍历数值范围 -->
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            strList: ['a', 'b', 'c', 'd'],
+            objList: [
+                {id: 1, name: 'zs1'},
+                {id: 2, name: 'zs2'},
+                {id: 3, name: 'zs3'},
+                {id: 4, name: 'zs4'},
+            ],
+            obj: {
+                id: 1,
+                name: 'zs',
+                age: 10,
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

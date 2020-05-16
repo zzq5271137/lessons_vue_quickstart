@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_插值语法与数据绑定</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <!-- 使用{{}}插值语法, 绑定数据, 插值语法中可以进行表达式的运算 -->
+    {{ num }}<br>
+    {{ num + 1 }}<br>  <!-- 数值运算 -->
+    {{ 'abc' + 'd' }}<br>  <!-- 拼接字符串 -->
+    {{ 3 > 2 ? true : false }}<br>  <!-- 三元运算符 -->
+
+    <hr>
+
+    <!-- 对象的绑定 -->
+    name: {{ user.name }}<br>
+    age: {{ user.age }}<br>
+
+    <hr>
+
+    <!-- 插值语法可以进行文本展示 -->
+    <h1>{{ user.name }}</h1>
+    <h1 v-text="user.name"></h1>  <!-- 或者可以使用v-text -->
+    <h1 v-html="user.name"></h1>  <!-- 或者可以使用v-html -->
+
+    <hr>
+
+    <!-- 区别在于, v-html可以解析标签 -->
+    <div>{{ content }}</div>
+    <div v-text="content"></div>
+    <div v-html="content"></div>
+
+    <hr>
+
+    <!-- 使用v-model在input标签中绑定数据(这是双向绑定) -->
+    {{ num }}<br>
+    <input type="text" v-model="num">
+
+    <hr>
+
+    <!-- 如果不想双向绑定, 可以使用v-bind:value -->
+    {{ num }}<br>
+    <input type="text" v-bind:value="num">
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            num: 100,
+            user: {
+                name: 'zzq',
+                age: 10,
+            },
+            content: '<h1>大标题</h1>'
+        }
+    });
+</script>
+
+</body>
+</html>
