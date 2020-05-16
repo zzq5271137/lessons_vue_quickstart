@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1781cf15-d6db-4363-beac-a75170cd5a0a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/01_vue基本介绍.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02_事件绑定.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03_绑定键盘事件.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04_绑定鼠标事件.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05_阻止默认事件.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/06_阻止事件冒泡.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/07_插值语法与数据绑定.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/08_集合数据的绑定.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/09_节点控制.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10_生命周期方法.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_插值语法与数据绑定.html" beforeDir="false" afterPath="$PROJECT_DIR$/07_插值语法与数据绑定.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +86,7 @@
       <workItem from="1589553654901" duration="73000" />
       <workItem from="1589554552153" duration="504000" />
       <workItem from="1589593488862" duration="12115000" />
+      <workItem from="1589631446276" duration="356000" />
     </task>
     <servers />
   </component>
