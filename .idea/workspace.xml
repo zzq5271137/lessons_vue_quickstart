@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1781cf15-d6db-4363-beac-a75170cd5a0a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/07_插值语法与数据绑定.html" beforeDir="false" afterPath="$PROJECT_DIR$/07_插值语法与数据绑定.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/11_Vue.set()的用法.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +49,13 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\WebStorm_workspace\Lessons_Vue_quickstart" />
-      <recent name="H:\WebStorm_workspace\Lessons_Vue_quickstart\课程资料" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\WebStorm_workspace\Lessons_Vue_quickstart" />
       <recent name="H:\WebStorm_workspace\Lessons_Vue_quickstart\课程资料\xmind" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\WebStorm_workspace\Lessons_Vue_quickstart" />
+      <recent name="H:\WebStorm_workspace\Lessons_Vue_quickstart\课程资料" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -87,6 +87,7 @@
       <workItem from="1589554552153" duration="504000" />
       <workItem from="1589593488862" duration="12115000" />
       <workItem from="1589631446276" duration="356000" />
+      <workItem from="1591010076205" duration="208000" />
     </task>
     <servers />
   </component>
